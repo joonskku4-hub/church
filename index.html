@@ -7,20 +7,17 @@
   <title>빛과 소금 교회</title>
   <meta name="description" content="서울 노원구 중계동에 위치한 빛과 소금 교회입니다. 예배 안내, 섬기는 분들, 오시는 길 등 교회 정보를 확인하세요.">
 
-  <!-- Open Graph (카카오톡 등 SNS 공유 미리보기) -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="빛과 소금 교회">
   <meta property="og:description" content="서울 노원구 중계동에 위치한 빛과 소금 교회입니다. 누구나 환영합니다.">
-  <meta property="og:url" content="https://joonskku4-hub.github.io/church/">
+  <meta property="og:url"         content="https://joonskku4-hub.github.io/church/">
   <!-- TODO: og:image — 교회 대표 이미지 파일 경로 추가 (권장 크기: 1200×630px) -->
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!-- Pretendard (한글 가독성 최적화) — CDN, 빌드 도구 불필요 -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <!-- Noto Sans KR fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
@@ -30,63 +27,84 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════
-       1. 히어로
-  ═══════════════════════════════════ -->
+  <!-- ── NAV ─────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-brand">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="11" y="2"  width="2.4" height="20" rx="1.2" fill="white"/>
+        <rect x="4"  y="8"  width="16"  height="2.4" rx="1.2" fill="white"/>
+      </svg>
+      빛과 소금 교회
+    </div>
+    <ul class="nav-links">
+      <li><a href="#worship">예배</a></li>
+      <li><a href="#staff">섬기는 분들</a></li>
+      <li><a href="#location">오시는 길</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────── -->
   <header id="hero">
     <div class="hero-cross" aria-hidden="true">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="21" y="4"  width="6" height="40" rx="3" fill="white"/>
-        <rect x="8"  y="16" width="32" height="6"  rx="3" fill="white"/>
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="25" y="4"  width="6" height="48" rx="3" fill="white" opacity=".95"/>
+        <rect x="8"  y="18" width="40" height="6"  rx="3" fill="white" opacity=".95"/>
+        <!-- glow -->
+        <rect x="25" y="4"  width="6" height="48" rx="3" fill="#c08840" opacity=".25"/>
+        <rect x="8"  y="18" width="40" height="6"  rx="3" fill="#c08840" opacity=".25"/>
       </svg>
     </div>
+
+    <p class="hero-kicker">Light &amp; Salt Church</p>
     <h1 class="hero-title">빛과 소금 교회</h1>
-    <p class="hero-subtitle">세상의 빛과 소금이 되어 이웃을 섬기는 교회, 함께해요</p>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <p class="hero-subtitle">세상의 빛과 소금이 되어<br>이웃을 섬기는 교회, 함께해요</p>
+
+    <a href="#worship" class="hero-scroll" aria-label="아래로 스크롤">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
   </header>
 
   <main>
 
-    <!-- ═══════════════════════════════════
-         2. 예배 안내
-         시간 수정 시: 아래 각 .worship-card 안의 .time-badge 와 .name 을 편집하세요
-    ═══════════════════════════════════ -->
-    <section id="worship" class="section-light">
-      <div class="container">
-        <h2 class="section-title">예배 안내</h2>
+    <!-- ── 예배 안내 ──────────────────────────────
+         시간 수정: 아래 각 .wcard 의 .wcard-name / .wcard-time / .wcard-note 편집
+    ────────────────────────────────────────────── -->
+    <section id="worship" class="sec">
+      <div class="wrap">
+        <header class="sec-header">
+          <p class="sec-label">Worship</p>
+          <h2 class="sec-title">예배 안내</h2>
+        </header>
 
         <!-- 주일 예배 -->
         <div class="worship-group">
-          <p class="worship-group-title">주일 예배</p>
+          <p class="group-label">주일 예배</p>
           <div class="worship-grid">
 
-            <div class="worship-card">
-              <span class="time-badge">오전 10:00</span>
-              <div class="info">
-                <p class="name">주일 1부 예배</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">주일 1부 예배</p>
+              <p class="wcard-time">오전 10:00</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">오후 12:00</span>
-              <div class="info">
-                <p class="name">주일 2부 예배</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">주일 2부 예배</p>
+              <p class="wcard-time">오후 12:00</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">오후 2:30</span>
-              <div class="info">
-                <p class="name">세대통합예배</p>
-                <p class="note">매월 첫째 주일</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">세대통합예배</p>
+              <p class="wcard-time">오후 2:30</p>
+              <p class="wcard-note">매월 첫째 주일</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">오후 7:30</span>
-              <div class="info">
-                <p class="name">주일 저녁예배</p>
-                <p class="note">매월 첫째 주는 산기도로 대체</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">주일 저녁예배</p>
+              <p class="wcard-time">오후 7:30</p>
+              <p class="wcard-note">매월 첫째 주는 산기도로 대체</p>
             </div>
 
           </div>
@@ -94,36 +112,28 @@
 
         <!-- 주중 예배 -->
         <div class="worship-group">
-          <p class="worship-group-title">주중 예배</p>
+          <p class="group-label">주중 예배</p>
           <div class="worship-grid">
 
-            <div class="worship-card">
-              <span class="time-badge">화 오후 8:30</span>
-              <div class="info">
-                <p class="name">화요 성경공부</p>
-                <p class="note">교회 단톡방 링크를 통해서만 입장 가능</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">화요 성경공부</p>
+              <p class="wcard-time">오후 8:30</p>
+              <p class="wcard-note">교회 단톡방 링크를 통해서만 입장 가능</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">수 오후 8:30</span>
-              <div class="info">
-                <p class="name">수요예배</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">수요예배</p>
+              <p class="wcard-time">오후 8:30</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">목 오후 8:30</span>
-              <div class="info">
-                <p class="name">목요예배</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">목요예배</p>
+              <p class="wcard-time">오후 8:30</p>
             </div>
 
-            <div class="worship-card">
-              <span class="time-badge">금 오후 9:00</span>
-              <div class="info">
-                <p class="name">금요철야예배</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">금요철야예배</p>
+              <p class="wcard-time">오후 9:00</p>
             </div>
 
           </div>
@@ -131,15 +141,13 @@
 
         <!-- 특별 일정 -->
         <div class="worship-group">
-          <p class="worship-group-title">특별 일정</p>
+          <p class="group-label">특별 일정</p>
           <div class="worship-grid">
 
-            <div class="worship-card">
-              <span class="time-badge">오전 5:30</span>
-              <div class="info">
-                <p class="name">새벽기도</p>
-                <p class="note">매월 1일</p>
-              </div>
+            <div class="wcard">
+              <p class="wcard-name">새벽기도</p>
+              <p class="wcard-time">오전 5:30</p>
+              <p class="wcard-note">매월 1일</p>
             </div>
 
           </div>
@@ -148,32 +156,37 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════
-         3. 섬기는 분들
-         담당자 수정 시: 아래 .staff-card 의 이름/직함을 편집하세요
-    ═══════════════════════════════════ -->
-    <section id="staff" class="section-alt">
-      <div class="container">
-        <h2 class="section-title">섬기는 분들</h2>
+    <!-- ── 섬기는 분들 ──────────────────────────────
+         담당자 수정: .scard-avatar(첫 글자) / .scard-name / .scard-role 편집
+    ────────────────────────────────────────────── -->
+    <section id="staff" class="sec sec-alt">
+      <div class="wrap">
+        <header class="sec-header">
+          <p class="sec-label">Our Team</p>
+          <h2 class="sec-title">섬기는 분들</h2>
+        </header>
 
         <!-- 목회진 -->
         <div class="staff-group">
-          <p class="staff-group-title">목회진</p>
-          <div class="staff-list">
+          <p class="group-label">목회진</p>
+          <div class="staff-grid">
 
-            <div class="staff-card">
-              <span class="role-badge">담임목사</span>
-              <span class="staff-name">임 철</span>
+            <div class="scard">
+              <div class="scard-avatar">임</div>
+              <p class="scard-name">임 철</p>
+              <p class="scard-role">담임목사</p>
             </div>
 
-            <div class="staff-card">
-              <span class="role-badge">원로목사</span>
-              <span class="staff-name">최학규</span>
+            <div class="scard">
+              <div class="scard-avatar">최</div>
+              <p class="scard-name">최학규</p>
+              <p class="scard-role">원로목사</p>
             </div>
 
-            <div class="staff-card">
-              <span class="role-badge">협력목사</span>
-              <span class="staff-name">이주향</span>
+            <div class="scard">
+              <div class="scard-avatar">이</div>
+              <p class="scard-name">이주향</p>
+              <p class="scard-role">협력목사</p>
             </div>
 
           </div>
@@ -181,39 +194,31 @@
 
         <!-- 교육부서 -->
         <div class="staff-group">
-          <p class="staff-group-title">교육부서</p>
-          <div class="staff-list">
+          <p class="group-label">교육부서</p>
+          <div class="staff-grid">
 
-            <div class="staff-card">
-              <span class="role-badge">영아부</span>
-              <span>
-                <span class="staff-name">이유은</span>
-                <span class="staff-title-label">교육전도사</span>
-              </span>
+            <div class="scard">
+              <div class="scard-avatar">이</div>
+              <p class="scard-name">이유은</p>
+              <p class="scard-role">영아부<br>교육전도사</p>
             </div>
 
-            <div class="staff-card">
-              <span class="role-badge">유치부</span>
-              <span>
-                <span class="staff-name">민아영</span>
-                <span class="staff-title-label">교육전도사</span>
-              </span>
+            <div class="scard">
+              <div class="scard-avatar">민</div>
+              <p class="scard-name">민아영</p>
+              <p class="scard-role">유치부<br>교육전도사</p>
             </div>
 
-            <div class="staff-card">
-              <span class="role-badge">유초등부</span>
-              <span>
-                <span class="staff-name">김민정</span>
-                <span class="staff-title-label">사역간사</span>
-              </span>
+            <div class="scard">
+              <div class="scard-avatar">김</div>
+              <p class="scard-name">김민정</p>
+              <p class="scard-role">유초등부<br>사역간사</p>
             </div>
 
-            <div class="staff-card">
-              <span class="role-badge">중고등부</span>
-              <span>
-                <span class="staff-name">이승제</span>
-                <span class="staff-title-label">전임강도사</span>
-              </span>
+            <div class="scard">
+              <div class="scard-avatar">이</div>
+              <p class="scard-name">이승제</p>
+              <p class="scard-role">중고등부<br>전임강도사</p>
             </div>
 
           </div>
@@ -222,57 +227,53 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════
-         4. 오시는 길
-    ═══════════════════════════════════ -->
-    <section id="location" class="section-light">
-      <div class="container">
-        <h2 class="section-title">오시는 길</h2>
+    <!-- ── 오시는 길 ─────────────────────────────── -->
+    <section id="location" class="sec">
+      <div class="wrap">
+        <header class="sec-header">
+          <p class="sec-label">Location</p>
+          <h2 class="sec-title">오시는 길</h2>
+        </header>
 
-        <div class="address-box">
-          <p class="address-label">도로명 주소</p>
-          <p class="address-text">서울 노원구 노원로22길 77<br>건영3차아파트상가 4층 빛과소금교회</p>
+        <div class="loc-card">
+          <div class="loc-row">
+            <div class="loc-item">
+              <p class="loc-item-label">도로명 주소</p>
+              <p class="loc-item-text">서울 노원구 노원로22길 77<br>건영3차아파트상가 4층 빛과소금교회</p>
+            </div>
+            <div class="loc-item">
+              <p class="loc-item-label">지번 주소</p>
+              <p class="loc-item-text">서울 노원구 중계동 360-15<br>건영3차아파트상가 4층</p>
+            </div>
+          </div>
 
-          <p class="address-label">지번 주소</p>
-          <p class="address-text">서울 노원구 중계동 360-15<br>건영3차아파트상가 4층</p>
-        </div>
+          <div class="map-btns">
+            <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%85%B8%EC%9B%90%EA%B5%AC%20%EB%85%B8%EC%9B%90%EB%A1%9C22%EA%B8%B8%2077%20%EA%B1%B4%EC%98%813%EC%B0%A8%EC%95%84%ED%8C%8C%ED%8A%B8%EC%83%81%EA%B0%80"
+               class="btn btn-naver" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/>
+              </svg>
+              네이버 지도
+            </a>
 
-        <div class="map-buttons">
-          <!-- 네이버지도: API 키 없이 주소 검색 링크 -->
-          <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%85%B8%EC%9B%90%EA%B5%AC%20%EB%85%B8%EC%9B%90%EB%A1%9C22%EA%B8%B8%2077%20%EA%B1%B4%EC%98%813%EC%B0%A8%EC%95%84%ED%8C%8C%ED%8A%B8%EC%83%81%EA%B0%80"
-             class="btn btn-naver"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="네이버 지도에서 위치 보기">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/>
-            </svg>
-            네이버 지도
-          </a>
+            <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EB%85%B8%EC%9B%90%EA%B5%AC%20%EB%85%B8%EC%9B%90%EB%A1%9C22%EA%B8%B8%2077%20%EA%B1%B4%EC%98%813%EC%B0%A8%EC%95%84%ED%8C%8C%ED%8A%B8%EC%83%81%EA%B0%80"
+               class="btn btn-kakao" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 3C6.48 3 2 6.92 2 11.76c0 2.99 1.73 5.63 4.36 7.26l-1.1 4.08 4.75-3.14c.64.09 1.3.14 1.99.14 5.52 0 10-3.92 10-8.76S17.52 3 12 3z"/>
+              </svg>
+              카카오 지도
+            </a>
 
-          <!-- 카카오맵: API 키 없이 주소 검색 링크 -->
-          <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EB%85%B8%EC%9B%90%EA%B5%AC%20%EB%85%B8%EC%9B%90%EB%A1%9C22%EA%B8%B8%2077%20%EA%B1%B4%EC%98%813%EC%B0%A8%EC%95%84%ED%8C%8C%ED%8A%B8%EC%83%81%EA%B0%80"
-             class="btn btn-kakao"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="카카오 지도에서 위치 보기">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 3C6.48 3 2 6.92 2 11.76c0 2.99 1.73 5.63 4.36 7.26l-1.1 4.08 4.75-3.14c.64.09 1.3.14 1.99.14 5.52 0 10-3.92 10-8.76S17.52 3 12 3z"/>
-            </svg>
-            카카오 지도
-          </a>
-
-          <!-- 주소 복사 (JS) -->
-          <button id="btn-copy"
-                  class="btn btn-copy"
-                  onclick="copyAddress()"
-                  aria-label="도로명 주소 클립보드에 복사">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="9" y="9" width="13" height="13" rx="2"/>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-            </svg>
-            주소 복사
-          </button>
+            <button id="btn-copy" class="btn btn-copy" onclick="copyAddress()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              주소 복사
+            </button>
+          </div>
         </div>
 
       </div>
@@ -280,11 +281,15 @@
 
   </main>
 
-  <!-- ═══════════════════════════════════
-       5. 푸터
-  ═══════════════════════════════════ -->
+  <!-- ── FOOTER ────────────────────────────────── -->
   <footer>
-    <div class="container">
+    <div class="wrap">
+      <div class="footer-cross" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="11" y="2"  width="2" height="20" rx="1" fill="white"/>
+          <rect x="4"  y="8"  width="16" height="2"  rx="1" fill="white"/>
+        </svg>
+      </div>
       <p class="footer-name">빛과 소금 교회</p>
       <p class="footer-addr">서울 노원구 노원로22길 77 건영3차아파트상가 4층</p>
       <!-- TODO: 전화번호 추가 시 아래 주석 해제 후 번호 입력 -->
@@ -294,32 +299,34 @@
   </footer>
 
   <script>
+    /* ── 스크롤 시 nav 배경 처리 ── */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ── 주소 복사 ── */
     function copyAddress() {
       var addr = '서울 노원구 노원로22길 77 건영3차아파트상가 4층 빛과소금교회';
-      var btn = document.getElementById('btn-copy');
+      var btn  = document.getElementById('btn-copy');
 
-      function showCopied() {
-        btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 복사됨!';
+      function showOk() {
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 복사됨!';
         setTimeout(function () {
-          btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> 주소 복사';
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> 주소 복사';
         }, 2000);
       }
 
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(addr).then(showCopied).catch(fallbackCopy);
-      } else {
-        fallbackCopy();
-      }
+        navigator.clipboard.writeText(addr).then(showOk).catch(fallback);
+      } else { fallback(); }
 
-      function fallbackCopy() {
+      function fallback() {
         var el = document.createElement('textarea');
-        el.value = addr;
-        el.style.position = 'fixed';
-        el.style.opacity = '0';
-        document.body.appendChild(el);
-        el.focus();
-        el.select();
-        try { document.execCommand('copy'); showCopied(); } catch (e) { alert('복사를 지원하지 않는 브라우저입니다.\n주소: ' + addr); }
+        el.value = addr; el.style.cssText = 'position:fixed;opacity:0';
+        document.body.appendChild(el); el.focus(); el.select();
+        try { document.execCommand('copy'); showOk(); }
+        catch (e) { alert('주소: ' + addr); }
         document.body.removeChild(el);
       }
     }
