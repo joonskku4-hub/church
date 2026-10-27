@@ -69,29 +69,24 @@ a    { color:inherit; text-decoration:none; }
 /* ── HERO ────────────────────────────────────── */
 #hero {
   min-height:100dvh;
-  /* 로고 이미지 배경색(#3a3a3a)에서 아래로 자연스럽게 어두워지는 그라디언트 */
-  background: linear-gradient(180deg, #3a3a3a 0%, #2c2c2c 45%, #1a1a1a 100%);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 35%, rgba(184,137,46,.13) 0%, transparent 65%),
+    linear-gradient(175deg, #1a0e04 0%, #2c1c0c 50%, #3a2410 100%);
   display:flex; flex-direction:column;
   align-items:center; justify-content:center;
   text-align:center;
   padding:8rem 1.5rem 5rem;
   position:relative; overflow:hidden;
 }
-#hero::after {
-  content:'';
-  position:absolute; inset:0;
-  background:radial-gradient(ellipse 60% 40% at 50% 30%, rgba(184,137,46,.08) 0%, transparent 65%);
-  pointer-events:none;
-}
 
 .hero-logo {
-  width:min(240px, 62vw);
+  width:min(220px, 58vw);
   height:auto;
   margin:0 auto 2rem;
   display:block;
-  /* blend mode 제거 — 배경색이 맞으므로 그대로 표시 */
+  /* 투명 PNG — 배경에 자연스럽게 통합 */
+  filter:drop-shadow(0 4px 24px rgba(184,137,46,.25));
   position:relative; z-index:1;
-  border-radius:4px; /* 미세한 라운드로 딱딱한 느낌 완화 */
 }
 
 .hero-kicker {
@@ -315,7 +310,9 @@ footer {
 /* ── VISION PAGE ─────────────────────────────── */
 .vp-hero {
   min-height:100dvh;
-  background: linear-gradient(180deg, #3a3a3a 0%, #2c2c2c 45%, #1a1a1a 100%);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 35%, rgba(184,137,46,.10) 0%, transparent 65%),
+    linear-gradient(175deg, #1a0e04 0%, #2c1c0c 50%, #3a2410 100%);
   display:flex; flex-direction:column;
   align-items:center; justify-content:center;
   text-align:center; padding:8rem 1.5rem 5rem;
@@ -324,7 +321,7 @@ footer {
 .vp-hero-logo {
   width:min(220px,58vw); height:auto;
   margin:0 auto 2.5rem;
-  border-radius:4px;
+  filter:drop-shadow(0 4px 24px rgba(184,137,46,.2));
 }
 .vp-hero-kicker { font-size:.7rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-l); margin-bottom:.9rem; }
 .vp-hero-ttl { font-size:clamp(2.2rem,6vw,3.6rem); font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1.15; margin-bottom:1rem; }
