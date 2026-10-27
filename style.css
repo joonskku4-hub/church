@@ -301,6 +301,15 @@ footer {
 .ft-logo { height:48px; width:auto; margin:0 auto 1.1rem; mix-blend-mode:screen; filter:brightness(1.2); opacity:.7; }
 .ft-name { font-size:.95rem; font-weight:700; color:rgba(255,255,255,.85); margin-bottom:.35rem; }
 .ft-addr { font-size:.8rem; line-height:1.7; margin-bottom:.2rem; }
+.ft-yt {
+  display:inline-flex; align-items:center; gap:.5rem;
+  margin:.9rem auto .3rem;
+  color:rgba(255,255,255,.65); font-size:.82rem; font-weight:500;
+  border:1px solid rgba(255,255,255,.15);
+  padding:.45rem 1rem; border-radius:20px;
+  transition:color .2s, border-color .2s;
+}
+.ft-yt:hover { color:#fff; border-color:rgba(255,255,255,.4); }
 .ft-copy { font-size:.74rem; opacity:.4; margin-top:.85rem; }
 
 /* ── VISION PAGE ─────────────────────────────── */
