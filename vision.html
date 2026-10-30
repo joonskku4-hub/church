@@ -92,86 +92,46 @@
     .vh-scroll svg { width: 18px; height: 18px; }
     @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
-    /* PILLAR COMMON */
-    .vp {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    .vp-visual {
-      min-height: 260px;
-      position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .vp-visual svg.art {
-      flex-shrink: 0; filter: drop-shadow(0 4px 24px rgba(0,0,0,.3));
-    }
-    .vp-text {
-      padding: 3rem 1.5rem 3.5rem;
-      display: flex; flex-direction: column; justify-content: center;
-      align-items: center; text-align: center;
-    }
-    .vp-num {
-      font-size: .68rem; font-weight: 800; letter-spacing: .22em;
-      margin-bottom: .9rem;
-    }
-    .vp-en {
-      font-size: .7rem; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; margin-bottom: .6rem;
-    }
-    .vp-ko {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 900; letter-spacing: -.025em;
-      line-height: 1.15; margin-bottom: 1.2rem;
-    }
-    .vp-desc {
-      font-size: clamp(1rem, 2vw, 1.1rem);
-      line-height: 1.75; margin-bottom: 0;
-      opacity: .85;
-    }
-    .vp-verse {
-      font-size: .83rem; font-style: italic;
-      line-height: 1.65; padding-left: 1rem;
-      border-left: 2px solid; opacity: .7;
-    }
-
-    /* PILLAR 01 — 매일 예배 (warm dark / ember) */
-    .vp-01 .vp-visual {
+    /* VISION ROWS */
+    .vp-rows {
       background:
-        radial-gradient(ellipse 60% 70% at 50% 20%, rgba(220,120,20,.35) 0%, transparent 65%),
-        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(80,20,0,.6) 0%, transparent 60%),
-        linear-gradient(175deg, #0e0602 0%, #1e0b04 50%, #0e0602 100%);
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(192,136,64,.1) 0%, transparent 55%),
+        linear-gradient(175deg, #0e0804 0%, #1a1006 100%);
     }
-    .vp-01 .vp-text { background: #120804; color: rgba(255,255,255,.82); }
-    .vp-01 .vp-num  { color: rgba(192,136,64,.5); }
-    .vp-01 .vp-en   { color: var(--amber); }
-    .vp-01 .vp-ko   { color: #fff; }
-    .vp-01 .vp-verse { border-color: var(--amber); color: rgba(255,255,255,.55); }
-
-    /* PILLAR 02 — 그리스도 중심적 설교 (warm parchment) */
-    .vp-02 .vp-visual {
-      background:
-        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(230,210,170,.9) 0%, rgba(200,170,110,.6) 60%, rgba(160,120,60,.4) 100%),
-        linear-gradient(160deg, #c8a870 0%, #e8d4a8 50%, #d4b888 100%);
+    .vpr-inner { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    .vpr {
+      display: flex; align-items: flex-start; gap: 1.4rem;
+      padding: 2.8rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
-    .vp-02 .vp-text { background: #faf5ec; color: #2a1c0c; }
-    .vp-02 .vp-num  { color: rgba(160,100,30,.4); }
-    .vp-02 .vp-en   { color: #9a6820; }
-    .vp-02 .vp-ko   { color: #1a0e04; }
-    .vp-02 .vp-desc { color: #3d2a10; }
-    .vp-02 .vp-verse { border-color: #9a6820; color: #5a3a18; }
-
-    /* PILLAR 03 — 젊은 공동체 (deep indigo-dark) */
-    .vp-03 .vp-visual {
-      background:
-        radial-gradient(circle at 30% 60%, rgba(60,80,160,.4) 0%, transparent 55%),
-        radial-gradient(circle at 70% 30%, rgba(100,60,140,.3) 0%, transparent 50%),
-        linear-gradient(160deg, #06080e 0%, #0c1020 50%, #06080e 100%);
+    .vpr:last-child { border-bottom: none; }
+    .vpr-num {
+      font-size: clamp(2.6rem, 5vw, 3.4rem); font-weight: 900;
+      line-height: 1; letter-spacing: -.04em;
+      color: rgba(192,136,64,.18); flex-shrink: 0; min-width: 2.6rem;
     }
-    .vp-03 .vp-text { background: #080b14; color: rgba(255,255,255,.8); }
-    .vp-03 .vp-num  { color: rgba(100,120,220,.4); }
-    .vp-03 .vp-en   { color: #8090e0; }
-    .vp-03 .vp-ko   { color: #fff; }
-    .vp-03 .vp-verse { border-color: #6070c0; color: rgba(255,255,255,.5); }
+    .vpr-icon {
+      flex-shrink: 0; padding-top: .3rem;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    .vpr-body { flex: 1; }
+    .vpr-en {
+      font-size: .68rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; margin-bottom: .3rem;
+    }
+    .vpr-ko {
+      font-size: clamp(1.35rem, 3.2vw, 1.8rem);
+      font-weight: 900; letter-spacing: -.025em; line-height: 1.2;
+      color: #fff; margin-bottom: .55rem;
+    }
+    .vpr-desc { font-size: clamp(.86rem, 1.8vw, .94rem); line-height: 1.75; opacity: .68; color: #fff; }
+    .vpr-01 .vpr-en { color: var(--amber); }
+    .vpr-02 .vpr-en { color: #a07828; }
+    .vpr-03 .vpr-en { color: #7888d8; }
+    @media (min-width: 600px) {
+      .vpr { gap: 2rem; padding: 3.2rem 0; }
+      .vpr-num { min-width: 3.2rem; }
+    }
 
     /* CTA */
     .vp-cta {
@@ -194,13 +154,6 @@
     .vp-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.3); }
     .vp-cta-btn svg { width: 16px; height: 16px; }
 
-    @media (min-width: 760px) {
-      .vp-visual { min-height: 340px; }
-      .vp-text { padding: 3.5rem 3rem 4rem; }
-    }
-    @media (min-width: 960px) {
-      .vp-text { padding: 4rem; }
-    }
   </style>
 </head>
 <body>
@@ -242,207 +195,94 @@
   </div>
 </header>
 
-<!-- ══════════════════════════════════════════
-     01 — 매일 예배
-══════════════════════════════════════════ -->
-<section class="vp vp-01" id="worship-vision">
+<section class="vp-rows" id="worship-vision">
+  <div class="vpr-inner">
 
-  <div class="vp-visual">
-    <!-- 촛불 아이콘 -->
-    <svg class="art" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:180px;height:220px">
-      <defs>
-        <linearGradient id="fl1" x1="90" y1="10" x2="90" y2="150" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="#fff5a0" stop-opacity=".95"/>
-          <stop offset="42%"  stop-color="#e86010" stop-opacity=".9"/>
-          <stop offset="100%" stop-color="#a02000" stop-opacity=".62"/>
-        </linearGradient>
-        <linearGradient id="fl2" x1="90" y1="38" x2="90" y2="145" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"  stop-color="#fff8d0"/>
-          <stop offset="100%" stop-color="#ffaa30" stop-opacity=".45"/>
-        </linearGradient>
-        <radialGradient id="glw1" cx="50%" cy="58%" r="52%">
-          <stop offset="0%"   stop-color="#e07820" stop-opacity=".42"/>
-          <stop offset="100%" stop-color="#e07820" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <!-- ambient glow -->
-      <ellipse cx="90" cy="98" rx="72" ry="62" fill="url(#glw1)"/>
-      <!-- glow rings -->
-      <ellipse cx="90" cy="90" rx="54" ry="44" stroke="rgba(255,175,45,.11)" stroke-width="1.5" fill="none"/>
-      <ellipse cx="90" cy="90" rx="66" ry="55" stroke="rgba(255,175,45,.07)" stroke-width="1"   fill="none"/>
-      <!-- sparks -->
-      <g fill="rgba(255,215,80,.75)">
-        <circle cx="60"  cy="72"  r="2.2"/>
-        <circle cx="122" cy="58"  r="1.8"/>
-        <circle cx="52"  cy="44"  r="1.4"/>
-        <circle cx="128" cy="84"  r="1.6"/>
-        <circle cx="68"  cy="34"  r="1.3"/>
-        <circle cx="114" cy="38"  r="1.5"/>
-        <circle cx="47"  cy="98"  r="1.1"/>
-      </g>
-      <!-- outer flame -->
-      <path d="M90 10 C132 60 138 108 90 150 C42 108 48 60 90 10Z" fill="url(#fl1)"/>
-      <!-- inner flame -->
-      <path d="M90 38 C110 78 114 118 90 144 C66 118 70 78 90 38Z" fill="url(#fl2)"/>
-      <!-- core -->
-      <ellipse cx="90" cy="130" rx="12" ry="17" fill="rgba(255,252,228,.95)"/>
-      <!-- wick -->
-      <line x1="90" y1="150" x2="90" y2="160" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
-      <!-- candle body (slight taper) -->
-      <path d="M73 160 L71 198 L109 198 L107 160Z" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
-      <!-- wax drips -->
-      <path d="M79  160 Q75 174 76 183" stroke="rgba(255,255,255,.18)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M101 160 Q106 170 104 178" stroke="rgba(255,255,255,.13)" stroke-width="2"   fill="none" stroke-linecap="round"/>
-      <!-- ornate base -->
-      <path d="M67 198 Q63 198 61 202 L61 206 Q61 210 65 210 L115 210 Q119 210 119 206 L119 202 Q117 198 113 198Z"
-            fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
-      <rect x="57" y="210" width="66" height="7" rx="3.5" fill="rgba(255,255,255,.09)" stroke="rgba(255,255,255,.17)" stroke-width="1"/>
-    </svg>
+    <div class="vpr vpr-01">
+      <span class="vpr-num">01</span>
+      <div class="vpr-icon">
+        <svg viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:32px;height:48px">
+          <defs>
+            <linearGradient id="vi1" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ffe080"/><stop offset="55%" stop-color="#e05810"/><stop offset="100%" stop-color="#a02000" stop-opacity=".6"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="16" cy="17" rx="13" ry="11" fill="rgba(224,120,32,.22)"/>
+          <path d="M16 2 C26 11 27 22 16 32 C5 22 6 11 16 2Z" fill="url(#vi1)"/>
+          <ellipse cx="16" cy="26" rx="5" ry="6" fill="rgba(255,252,220,.92)"/>
+          <line x1="16" y1="32" x2="16" y2="37" stroke="rgba(255,255,255,.3)" stroke-width="1.2"/>
+          <rect x="9" y="37" width="14" height="9" rx="2" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.14)" stroke-width=".8"/>
+        </svg>
+      </div>
+      <div class="vpr-body">
+        <p class="vpr-en">Daily Worship</p>
+        <h2 class="vpr-ko">매일 예배</h2>
+        <p class="vpr-desc">매일의 삶 속에서 하나님을 예배하는 공동체입니다.</p>
+      </div>
+    </div>
+
+    <div class="vpr vpr-02" id="preaching-vision">
+      <span class="vpr-num">02</span>
+      <div class="vpr-icon">
+        <svg viewBox="0 0 46 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:46px;height:38px">
+          <defs>
+            <linearGradient id="vi2L" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b08040"/><stop offset="100%" stop-color="#d8c080"/></linearGradient>
+            <linearGradient id="vi2R" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d8c080"/><stop offset="100%" stop-color="#b08040"/></linearGradient>
+            <linearGradient id="vi2C" x1="23" y1="0" x2="23" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="rgba(255,255,255,.88)"/><stop offset="100%" stop-color="rgba(200,150,50,.5)"/>
+            </linearGradient>
+          </defs>
+          <g stroke="rgba(200,155,45,.2)" stroke-width=".8" stroke-linecap="round">
+            <line x1="23" y1="10" x2="12" y2="0"/><line x1="23" y1="10" x2="34" y2="0"/>
+            <line x1="23" y1="10" x2="4"  y2="6"/><line x1="23" y1="10" x2="42" y2="6"/>
+          </g>
+          <path d="M2 12 Q2 10 5 10 L21 12 L21 36 L5 38 Q2 38 2 36Z" fill="url(#vi2L)" opacity=".92"/>
+          <path d="M44 12 Q44 10 41 10 L25 12 L25 36 L41 38 Q44 38 44 36Z" fill="url(#vi2R)" opacity=".92"/>
+          <rect x="20" y="10" width="6" height="28" fill="#7a5018" rx="1"/>
+          <rect x="21" y="1"  width="4" height="18" rx="1.5" fill="url(#vi2C)"/>
+          <rect x="16" y="7" width="14" height="3" rx="1.5" fill="url(#vi2C)"/>
+          <g stroke="rgba(80,40,8,.18)" stroke-width="1" stroke-linecap="round">
+            <line x1="5" y1="18" x2="17" y2="18"/><line x1="5" y1="23" x2="17" y2="23"/><line x1="5" y1="28" x2="14" y2="28"/>
+          </g>
+        </svg>
+      </div>
+      <div class="vpr-body">
+        <p class="vpr-en">Christ-Centered Preaching</p>
+        <h2 class="vpr-ko">그리스도 중심적 설교</h2>
+        <p class="vpr-desc">성경의 모든 이야기는 오직 예수 그리스도를 가리킵니다.</p>
+      </div>
+    </div>
+
+    <div class="vpr vpr-03" id="community-vision">
+      <span class="vpr-num">03</span>
+      <div class="vpr-icon">
+        <svg viewBox="0 0 48 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:48px;height:42px">
+          <circle cx="24" cy="21" r="14" fill="rgba(120,140,220,.15)"/>
+          <g stroke="rgba(130,150,230,.4)" stroke-width="1.2">
+            <line x1="24" y1="7"  x2="6"  y2="34"/>
+            <line x1="24" y1="7"  x2="42" y2="34"/>
+            <line x1="6"  y1="34" x2="42" y2="34"/>
+            <line x1="24" y1="7"  x2="24" y2="34"/>
+          </g>
+          <g transform="translate(24,4)" fill="rgba(190,205,255,.88)">
+            <circle cy="0" r="5.5"/><path d="M-7 10 Q-7 18 0 18 Q7 18 7 10 Q4 6 0 6 Q-4 6 -7 10Z"/>
+          </g>
+          <g transform="translate(6,29)" fill="rgba(152,170,242,.7)">
+            <circle cy="0" r="4.5"/><path d="M-5.5 8 Q-5.5 15 0 15 Q5.5 15 5.5 8 Q3 5 0 5 Q-3 5 -5.5 8Z"/>
+          </g>
+          <g transform="translate(42,29)" fill="rgba(152,170,242,.7)">
+            <circle cy="0" r="4.5"/><path d="M-5.5 8 Q-5.5 15 0 15 Q5.5 15 5.5 8 Q3 5 0 5 Q-3 5 -5.5 8Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="vpr-body">
+        <p class="vpr-en">Young Community</p>
+        <h2 class="vpr-ko">젊은 공동체</h2>
+        <p class="vpr-desc">복음 앞에 늘 새롭게 서는 살아있는 신앙의 공동체입니다.</p>
+      </div>
+    </div>
+
   </div>
-
-  <div class="vp-text">
-    <p class="vp-num">— 01</p>
-    <p class="vp-en">Daily Worship</p>
-    <h2 class="vp-ko">매일 예배</h2>
-    <p class="vp-desc">매일의 삶 속에서 하나님을 예배하는 공동체입니다.</p>
-  </div>
-
-</section>
-
-<!-- ══════════════════════════════════════════
-     02 — 그리스도 중심적 설교
-══════════════════════════════════════════ -->
-<section class="vp vp-02" id="preaching-vision">
-
-  <div class="vp-visual">
-    <!-- 성경 + 십자가 아이콘 -->
-    <svg class="art" viewBox="0 0 200 175" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:200px;height:175px">
-      <defs>
-        <linearGradient id="pL2" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"  stop-color="#b8904a"/><stop offset="100%" stop-color="#ddc890"/>
-        </linearGradient>
-        <linearGradient id="pR2" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"  stop-color="#ddc890"/><stop offset="100%" stop-color="#b8904a"/>
-        </linearGradient>
-        <linearGradient id="sp2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"  stop-color="#7a5018"/><stop offset="100%" stop-color="#4a2e0a"/>
-        </linearGradient>
-        <linearGradient id="crg2" x1="100" y1="0" x2="100" y2="72" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="rgba(255,255,255,.92)"/>
-          <stop offset="100%" stop-color="rgba(190,140,50,.55)"/>
-        </linearGradient>
-      </defs>
-      <!-- light rays behind cross -->
-      <g stroke="rgba(210,160,50,.22)" stroke-width="1" stroke-linecap="round">
-        <line x1="100" y1="38" x2="55"  y2="0"/>
-        <line x1="100" y1="38" x2="145" y2="0"/>
-        <line x1="100" y1="38" x2="25"  y2="18"/>
-        <line x1="100" y1="38" x2="175" y2="18"/>
-        <line x1="100" y1="38" x2="5"   y2="55"/>
-        <line x1="100" y1="38" x2="195" y2="55"/>
-        <line x1="100" y1="38" x2="18"  y2="95"/>
-        <line x1="100" y1="38" x2="182" y2="95"/>
-      </g>
-      <ellipse cx="100" cy="52" rx="48" ry="34" fill="rgba(220,165,55,.13)"/>
-      <!-- left page -->
-      <path d="M8 52 Q8 47 14 47 L93 51 L93 168 L14 172 Q8 172 8 168Z" fill="url(#pL2)" opacity=".92"/>
-      <!-- right page -->
-      <path d="M192 52 Q192 47 186 47 L107 51 L107 168 L186 172 Q192 172 192 168Z" fill="url(#pR2)" opacity=".92"/>
-      <!-- spine -->
-      <rect x="91" y="47" width="18" height="125" fill="url(#sp2)" rx="2"/>
-      <!-- text lines left -->
-      <g stroke="rgba(80,40,8,.18)" stroke-width="1.3" stroke-linecap="round">
-        <line x1="18" y1="78"  x2="84" y2="78"/> <line x1="18" y1="89"  x2="84" y2="89"/>
-        <line x1="18" y1="100" x2="74" y2="100"/><line x1="18" y1="114" x2="84" y2="114"/>
-        <line x1="18" y1="125" x2="84" y2="125"/><line x1="18" y1="136" x2="70" y2="136"/>
-        <line x1="18" y1="150" x2="84" y2="150"/>
-      </g>
-      <!-- text lines right -->
-      <g stroke="rgba(80,40,8,.18)" stroke-width="1.3" stroke-linecap="round">
-        <line x1="116" y1="78"  x2="182" y2="78"/> <line x1="116" y1="89"  x2="182" y2="89"/>
-        <line x1="116" y1="100" x2="170" y2="100"/><line x1="116" y1="114" x2="182" y2="114"/>
-        <line x1="116" y1="125" x2="182" y2="125"/><line x1="116" y1="136" x2="168" y2="136"/>
-        <line x1="116" y1="150" x2="182" y2="150"/>
-      </g>
-      <!-- cross rising from spine -->
-      <rect x="95" y="5"  width="10" height="66" rx="3" fill="url(#crg2)"/>
-      <rect x="72" y="24" width="56" height="10" rx="3" fill="url(#crg2)"/>
-      <!-- page curl -->
-      <path d="M93 168 Q96 178 107 168" stroke="rgba(90,50,10,.22)" stroke-width="1.5" fill="none"/>
-    </svg>
-  </div>
-
-  <div class="vp-text">
-    <p class="vp-num">— 02</p>
-    <p class="vp-en">Christ-Centered Preaching</p>
-    <h2 class="vp-ko">그리스도<br>중심적 설교</h2>
-    <p class="vp-desc">성경의 모든 이야기는 오직 예수 그리스도를 가리킵니다.</p>
-  </div>
-
-</section>
-
-<!-- ══════════════════════════════════════════
-     03 — 젊은 공동체
-══════════════════════════════════════════ -->
-<section class="vp vp-03" id="community-vision">
-
-  <div class="vp-visual">
-    <!-- 공동체 아이콘 (5인 오각형) -->
-    <svg class="art" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:200px;height:200px">
-      <defs>
-        <radialGradient id="ctr3" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"   stop-color="#8090e0" stop-opacity=".38"/>
-          <stop offset="100%" stop-color="#8090e0" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <!-- center glow -->
-      <circle cx="100" cy="100" r="58" fill="url(#ctr3)"/>
-      <!-- pentagon edges -->
-      <g stroke="rgba(145,165,245,.4)" stroke-width="1.4">
-        <line x1="100" y1="30"  x2="166" y2="78"/>
-        <line x1="166" y1="78"  x2="140" y2="158"/>
-        <line x1="140" y1="158" x2="60"  y2="158"/>
-        <line x1="60"  y1="158" x2="34"  y2="78"/>
-        <line x1="34"  y1="78"  x2="100" y2="30"/>
-      </g>
-      <!-- inner star lines -->
-      <g stroke="rgba(145,165,245,.18)" stroke-width="1">
-        <line x1="100" y1="30"  x2="140" y2="158"/>
-        <line x1="100" y1="30"  x2="60"  y2="158"/>
-        <line x1="166" y1="78"  x2="60"  y2="158"/>
-        <line x1="166" y1="78"  x2="34"  y2="78"/>
-        <line x1="140" y1="158" x2="34"  y2="78"/>
-      </g>
-      <!-- person top (100,30) -->
-      <g transform="translate(100,16)" fill="rgba(195,210,255,.9)">
-        <circle cy="0" r="11"/><path d="M-14 20 Q-14 32 0 32 Q14 32 14 20 Q9 13 0 13 Q-9 13 -14 20Z"/>
-      </g>
-      <!-- person top-right (166,78) -->
-      <g transform="translate(166,64)" fill="rgba(162,180,250,.72)">
-        <circle cy="0" r="9.5"/><path d="M-12 17 Q-12 28 0 28 Q12 28 12 17 Q7 10 0 10 Q-7 10 -12 17Z"/>
-      </g>
-      <!-- person bottom-right (140,158) -->
-      <g transform="translate(140,144)" fill="rgba(162,180,250,.72)">
-        <circle cy="0" r="9.5"/><path d="M-12 17 Q-12 28 0 28 Q12 28 12 17 Q7 10 0 10 Q-7 10 -12 17Z"/>
-      </g>
-      <!-- person bottom-left (60,158) -->
-      <g transform="translate(60,144)" fill="rgba(162,180,250,.72)">
-        <circle cy="0" r="9.5"/><path d="M-12 17 Q-12 28 0 28 Q12 28 12 17 Q7 10 0 10 Q-7 10 -12 17Z"/>
-      </g>
-      <!-- person top-left (34,78) -->
-      <g transform="translate(34,64)" fill="rgba(162,180,250,.72)">
-        <circle cy="0" r="9.5"/><path d="M-12 17 Q-12 28 0 28 Q12 28 12 17 Q7 10 0 10 Q-7 10 -12 17Z"/>
-      </g>
-    </svg>
-  </div>
-
-  <div class="vp-text">
-    <p class="vp-num">— 03</p>
-    <p class="vp-en">Young Community</p>
-    <h2 class="vp-ko">젊은 공동체</h2>
-    <p class="vp-desc">복음 앞에 늘 새롭게 서는 살아있는 신앙의 공동체입니다.</p>
-  </div>
-
 </section>
 
 <!-- ── CTA ──────────────────────────────────── -->
